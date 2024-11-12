@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>level 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chewy&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div><img src="ima/imagen2.jpg" alt="niños"
+            style="width: 25vw; position: absolute; margin-left: 37.5vw; margin-top: 3vh;"></div>
+
+    <div id="p1">
+        <h3 class="word" style="margin-top: 20vh; width: 8vw; margin-left: -0.7vw;">Sara draws worse than Juan</h3>
+        <img class="letter" src="ima/letter.png" alt="letrero" style="margin-top: 15vh; margin-left: -3vh;">
+    </div>
+    <div id="p2">
+        <h3 class="word" style="margin-top: -18vh; width: 8vw;margin-left: -0.7vw;"> Juan draws more bad than Sara</h3>
+        <img class="letter" src="ima/letter.png" alt="letrero" style="margin-top: -30vh; margin-left: -3vh;">
+    </div>
+    <div id="p3">
+        <h3 class="word" style="margin-top: -22vh; width: 8vw;margin-left: -0.7vw;">Sara draws better than Juan</h3>
+        <img class="letter" src="ima/letter.png" alt="letrero" style="margin-top: -40vh; margin-left: -3vh;">
+    </div>
+    <div class="container-fluid mt-5">
+        <div id="cube"><img class="gatocarro" src="ima/Designer-removebg-preview.png" alt="gatito sobre carro"></div>
+    </div>
+
+    <!-- Modal for Correct Answer -->
+    <div class="modal fade" id="endModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">The car has arrived!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">Correct answer!</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="nextLevelBtn">Next level</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Incorrect Answers -->
+    <div class="modal fade" id="endModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">The car has arrived!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">The answer is incorrect :c</div>
+                <div class="modal-footer">
+                    <button id="restart-btn" onclick="window.location.reload();"
+                        class="btn btn-warning">Restart</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mt-5">
+        <div id="cube1"><img class="gatocarro" src="ima/Designer-removebg-preview.png" alt="carro"></div>
+    </div>
+
+    <div class="container-fluid mt-5">
+        <div id="cube2"><img class="gatocarro" src="ima/Designer-removebg-preview.png" alt="carro"></div>
+    </div>
+    <!-- Contenedor de botones centrado en la parte inferior -->
+    <div class="button-container">
+        <!-- Botón de interrogación (izquierda) -->
+        <button class="btn btn-warning btn-circle" data-bs-toggle="modal" data-bs-target="#questionModal">
+            <i class="bi bi-question-circle"></i>
+        </button>
+
+        <!-- Botón de casa (centro) -->
+        <button onclick="window.location.href='index.html';" class="btn btn-warning btn-circle">
+            <i class="bi bi-house-door"></i>
+        </button>
+
+        <!-- Botón de pausa (derecha) -->
+        <button class="btn btn-warning btn-circle" data-bs-toggle="modal" data-bs-target="#pauseModal">
+            <i class="bi bi-pause"></i>
+        </button>
+    </div>
+
+    <!-- Modal de la pregunta -->
+    <div class="modal fade" id="questionModal" tabindex="-1" aria-labelledby="questionModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="max-width: 70%;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="questionModalLabel">Topic explanation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="ima/2.png" alt="Imagen de explicación" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de pausa -->
+    <div class="modal fade" id="pauseModal" tabindex="-1" aria-labelledby="pauseModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="pauseModalLabel">Game Paused</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex flex-column">
+                        <button onclick="window.location.href='carro2.html';" class="btn btn-warning mb-2">
+                            Continue Playing
+                        </button>
+                        <button onclick="window.location.href='carro2to.html';" class="btn btn-warning mb-2">
+                            Rewatch the Explanation, how to play?
+                        </button>
+                        <button onclick="window.location.href='index.html';" class="btn btn-warning">
+                            Go to Home
+                        </button>
+                        <button onclick="window.location.reload();" class="btn btn-warning" style="margin-top: 8px;">
+                            Restart Level
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="script2.js"></script>
+</body>
+
+</html>

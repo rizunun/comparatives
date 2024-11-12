@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparatives Game</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: -10vh;
+            overflow: hidden;
+            background-image: url(ima/fondo\ gatos.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            /* Soft pastel gradient */
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #ff9966;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h2 {
+            color: #ff9966;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Grid layout for the 3x3 buttons */
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 90px);
+            /* 3 columns */
+            gap: 15px;
+            justify-content: center;
+            grid-template-rows: repeat(3, 90px);
+            /* 3 rows */
+            margin-bottom: 20px;
+        }
+
+        .btn-circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+            background-color: #FFB07C;
+            /* Soft pastel orange */
+            transition: transform 0.3s ease, background-color 0.3s;
+        }
+
+        .btn-circle:hover {
+            transform: scale(1.1);
+            background-color: #FFA07C;
+        }
+
+        .huellitas {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            color: #ff9966;
+            font-size: 3rem;
+            z-index: -1;
+        }
+
+        .huellitas span {
+            margin: 0 5px;
+        }
+
+        .cat-ears {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: #ff9966;
+        }
+
+        .modal-content {
+            background-color: #ffcc99;
+        }
+
+        .modal-header {
+            background-color: #ff9966;
+            color: white;
+        }
+
+        .modal-footer {
+            background-color: #ffcc99;
+        }
+
+        .modal-body input {
+            border-radius: 20px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .modal-body label {
+            color: #ff9966;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <h1>Comparatives Game</h1>
+    <h2 id="greeting">Hello, Player!</h2>
+
+    <!-- Buttons to redirect to different game levels in 3x3 grid -->
+    <div class="levels-grid">
+        <button class="btn-circle" onclick="window.location.href='carro1ex.html'">1</button>
+        <button class="btn-circle" onclick="window.location.href='carro2ex.html'">2</button>
+        <button class="btn-circle" onclick="window.location.href='carro3ex.html'">3</button>
+        <button class="btn-circle" onclick="window.location.href='ballonex.html'">4</button>
+        <button class="btn-circle" onclick="window.location.href='ballon1ex.html'">5</button>
+        <button class="btn-circle" onclick="window.location.href='ballon2ex.html'">6</button>
+        <button class="btn-circle" onclick="window.location.href='memoryex.html'">7</button>
+        <button class="btn-circle" onclick="window.location.href='memory1ex.html'">8</button>
+        <button class="btn-circle" onclick="window.location.href='memory2ex.html'">9</button>
+    </div>
+
+    <!-- Modal for name input -->
+    <div class="modal fade" id="nameModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Welcome to the Comparatives game!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="playerName">Enter your name:</label>
+                    <input type="text" id="playerName" class="form-control" placeholder="Your name">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="submitName">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cat paw prints -->
+    <div class="huellitas">
+        <span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Show modal on page load and request name
+        window.onload = function () {
+            // Check if the name is stored in sessionStorage
+            const playerName = sessionStorage.getItem('playerName');
+
+            // If playerName exists in sessionStorage, update the greeting
+            if (playerName) {
+                document.getElementById('greeting').innerText = `Hello, ${playerName}!`;
+            } else {
+                const modal = new bootstrap.Modal(document.getElementById('nameModal'));
+                modal.show();
+
+                // Handle name input
+                document.getElementById('submitName').addEventListener('click', function () {
+                    const name = document.getElementById('playerName').value;
+                    if (name.trim() !== '') {
+                        document.getElementById('greeting').innerText = `Hello, ${name}!`;
+                        sessionStorage.setItem('playerName', name); // Save the name in sessionStorage
+                        modal.hide();
+                    } else {
+                        alert('Please enter a valid name!');
+                    }
+                });
+            }
+        };
+    </script>
+
+</body>
+
+</html>

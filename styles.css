@@ -1,0 +1,141 @@
+body,
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* Evita el desplazamiento vertical */
+    background-image: url(ima/fondo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.car {
+    width: 11vw;
+}
+
+#title {
+    margin: 2vh;
+    font-family: "Chewy", system-ui;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+.btn-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    /* Íconos blancos */
+}
+
+.modal-footer button {
+    width: 100%;
+}
+
+/* Flexbox para alinear los botones en la parte inferior centrados */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+}
+
+.button-container button {
+    margin: 0 10px;
+}
+
+.carrooo {
+    width: 11vw;
+}
+
+#gatocarro {
+    width: 11vw;
+}
+
+#p1 {
+    position: relative;
+    margin-top: 10%;
+    margin-left: 90vw
+}
+
+
+.word {
+    position: absolute;
+
+    margin: 2vh;
+    font-family: "Chewy", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.modal-content {
+    background-color: rgb(205, 247, 246);
+}
+
+
+#p2 {
+    margin-top: 13%;
+    margin-left: 90vw
+}
+
+#p3 {
+    margin-top: 13%;
+    margin-left: 90vw
+}
+
+#cube {
+    width: 11vw;
+    position: absolute;
+    top: 43%;
+    left: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    /* Añade el puntero de clic */
+}
+
+#cube1 {
+    width: 11vw;
+    position: absolute;
+    top: 63%;
+    left: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    /* Añade el puntero de clic */
+}
+
+#cube2 {
+    width: 11vw;
+    position: absolute;
+    top: 83%;
+    left: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    /* Añade el puntero de clic */
+}
+
+.move {
+    animation: moveCube 5s linear forwards;
+}
+
+/* Animación para mover el cubo de izquierda a derecha */
+@keyframes moveCube {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 100%;
+        transform: translate(-100%, -50%);
+    }
+}

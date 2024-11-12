@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@800&display=swap');
+
+* {
+    font-family: 'Biryani', sans-serif;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(to bottom, #4481eb 0%, #04bedd 100%);
+}
+
+p {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+td {
+    background-color: transparent;
+    height: 25vh;
+    /* Aumentar el tamaño de las tarjetas */
+    width: 25vh;
+    /* Aumentar el tamaño de las tarjetas */
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+td,
+.inner,
+.front,
+.back {
+    border-radius: 10px;
+}
+
+table {
+    margin-top: 40px;
+    border-spacing: 2vh;
+}
+
+#title {
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    margin: 8px;
+    color: white;
+    height: 56px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden;
+    font-size: 18px;
+    padding: 10px;
+}
+
+#logo {
+    font-size: 22px;
+}
+
+#time,
+#moves {
+    font-size: 18px;
+}
+
+.inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.front {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.back {
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}

@@ -1,0 +1,162 @@
+body,
+html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* Evita el desplazamiento vertical */
+    background-image: url(ima/fondo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    /* Íconos blancos */
+}
+
+.modal-footer button {
+    width: 100%;
+}
+
+/* Flexbox para alinear los botones en la parte inferior centrados */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+}
+
+.button-container button {
+    margin: 0 10px;
+}
+
+#title {
+    margin: 2vh;
+    font-family: "Chewy", system-ui;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+#gatocarro {
+    width: 11vw;
+}
+
+#p1 {
+    position: relative;
+    margin-top: 10%;
+    margin-left: 90vw
+}
+
+#animal1 {
+    position: absolute;
+    height: 6vh;
+}
+
+#animal2 {
+    position: absolute;
+    height: 8vh;
+    margin-top: -2vh;
+    margin-left: 2.5vw;
+}
+
+#animal3 {
+    position: absolute;
+    height: 8vh;
+    margin-top: -2vh;
+}
+
+#animal4 {
+    position: absolute;
+    height: 5.5vh;
+    margin-left: 2.8vw;
+}
+
+#animal5 {
+    margin-top: 2vh;
+    position: absolute;
+    height: 6vh;
+}
+
+#animal6 {
+    position: absolute;
+    margin-top: 2.4vh;
+    height: 5.3vh;
+    margin-left: 2.8vw;
+}
+
+.word {
+    position: absolute;
+}
+
+
+.modal-content {
+    background-color: rgb(205, 247, 246);
+}
+
+
+
+#p2 {
+    margin-top: 13%;
+    margin-left: 90vw
+}
+
+#p3 {
+    margin-top: 13%;
+    margin-left: 90vw
+}
+
+#cube {
+    position: absolute;
+    top: 43%;
+    left: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    /* Añade el puntero de clic */
+}
+
+#cube1 {
+    position: absolute;
+    top: 66%;
+    left: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    /* Añade el puntero de clic */
+}
+
+#cube2 {
+    position: absolute;
+    top: 86%;
+    left: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    /* Añade el puntero de clic */
+}
+
+.move {
+    animation: moveCube 5s linear forwards;
+}
+
+/* Animación para mover el cubo de izquierda a derecha */
+@keyframes moveCube {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 100%;
+        transform: translate(-100%, -50%);
+    }
+}

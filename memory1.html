@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Matching Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style7.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script7.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="ol"></div>
+    <div id="title">
+        <span id="logo">level 8</span>
+        <span id="moves"></span>
+        <span id="time"></span>
+    </div>
+    <center>
+        <table cellspacing="0"></table>
+    </center>
+
+    <!-- Modal -->
+    <div class="modal fade" id="endModal" tabindex="-1" aria-labelledby="endModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="endModalLabel">¡Correct balloon!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">You chose the correct answer</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="nextLevelBtn"
+                        onclick="window.location.href='memory2ex.html';">Next Level</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="timeUpModal" tabindex="-1" aria-labelledby="timeUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="timeUpModalLabel">¡Tiempo agotado!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">¡El tiempo se ha agotado! Has perdido, pero puedes intentarlo de nuevo.</div>
+                <div class="modal-footer">
+                    <!-- Botón para reiniciar el nivel -->
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                        onclick="restartLevel()">Reiniciar nivel</button>
+                    <!-- Botón para volver al inicio -->
+                    <button type="button" class="btn btn-primary" onclick="goToHome()">Volver al inicio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
